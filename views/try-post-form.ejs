@@ -1,0 +1,35 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="post">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                    <% if(typeof email !== 'undefined'){ %>
+                        <small class="form-text text-muted"><%= email %></small>
+                    <% } %>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                    <% if(locals.password){ %>   <!-- //建議這此法-->
+                        <small class="form-text text-muted"><%= password %></small>
+                    <% } %>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="check1"
+                           name="check1" value="hello">
+                    <label class="form-check-label" for="check1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<%- include('parts/scripts') %>
+<%- include('parts/html-foot') %>

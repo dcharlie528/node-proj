@@ -70,15 +70,25 @@ app.get('/my-params1/*/*?', (req, res) => {
     res.json(req.params);
 });
 
-app.get(/^\/m\/09\d{2}-?\d{3}-?\d{3}$/i, (req, res) => {
-    let u = req.url;
-    u = u.slice(3).split('-').join('');
-    u = u.split('?')[0];
-    res.json({
-        url: req.url,
-        手機: u
+// app.get(/^\/m\/09\d{2}-?\d{3}-?\d{3}$/i, (req, res) => {
+//     let u = req.url;
+//     u = u.slice(3).split('-').join('');
+//     u = u.split('?')[0];
+//     res.json({
+//         url: req.url,
+//         手機: u
+//     });
+// });
+
+app.get('/try-db', (req, res) => {
+    const sql = "select * from address_book";
+    db.query(sql)
+        .then(([results])=>{
+            res.json(results);
+        });
     });
-});
+
+
 
 
 

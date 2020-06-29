@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-+app.use(session({
+app.use(session({
     secret: 'aaaaaaaaqq',
     saveUninitialized: false,
     resave: false,
@@ -30,8 +30,11 @@ app.use(express.json());
 }));
 
 
+
+
 // custom middleware
 app.use((req, res, next) => {
+    res.locals.pageName = '';  //直接下在local，所有template都吃得到
     res.locals.myVar = {
         name: 'charlie',
         age: 26
@@ -39,6 +42,7 @@ app.use((req, res, next) => {
     next();
 });
 app.get("/", function (req, res) {
+    res.locals.pageName = 'home';
     res.render("main", {
         name: 'dcharlie',
     });

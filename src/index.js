@@ -34,6 +34,14 @@ app.use(session({
 
 // custom middleware
 app.use((req, res, next) => {
+//     req.session.adminUser = {
+//         account: 'asd',
+//         nickname: 'asd'
+//     };
+
+    // 把 session 資料傳給樣版
+    res.locals.sess = req.session;
+
     res.locals.pageName = '';  //直接下在local，所有template都吃得到
     res.locals.myVar = {
         name: 'charlie',

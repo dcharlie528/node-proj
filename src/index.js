@@ -52,7 +52,7 @@ app.use((req, res, next) => {
 app.get("/", function (req, res) {
     res.locals.pageName = 'home';
     res.render("main", {
-        name: 'dcharlie',
+        name: 'dchlie',
     });
 });
 

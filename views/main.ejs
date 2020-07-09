@@ -1,43 +1,53 @@
 <%- include("parts/html-head.ejs") %>
 <%- include("parts/navbar.ejs") %>
-<P Align=center><a href="http://localhost:3000/"><img src="../imgs/giphy.gif" alt="愛的魔力轉圈圈" class="husky"></a></P>
-
+<a href="http://localhost:3000/"><img src="../imgs/giphy.gif" alt="愛的魔力轉圈圈" class="husky"></a>
 <!-- 輪播 -->
-<div class="container">
-    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-interval="2000">
-                <img src="../imgs/suntor-kyoto1.jpg" class="d-block w-100" alt="...">
+<div
+    style="display:block;width: 100%;height:150px;background: url(../../../../imgs/wave2.svg) no-repeat;background-size: 100%;">
+</div>
+<div class="bgcolor" style="padding-top: 0px;">
+    <div class="container">
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="2000">
+                    <img src="../imgs/suntor-kyoto1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-interval="2000">
+                    <img src="../imgs/suntor-kyoto2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../imgs/suntor-kyoto3.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="../imgs/suntor-kyoto2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../imgs/suntor-kyoto3.jpg" class="d-block w-100" alt="...">
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+
+        <div class="col-sm col align-self-center p-3 mb-2 bg-info text-white">
+            廠內照片
+        </div>
+
+        <hr size="20px">
+        <div Align="center" style="margin-bottom: 50px;">
+            <P Align=center></P><iframe
+                src="https://twitter.com/suntory?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" width="1115"
+                height="300" frameborder="0" style="border:0"></iframe></P>
+            <!-- youtubevd -->
+            <iframe width="550" height="315" src="https://www.youtube.com/embed/hS8I8StOgjo" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe width="550" height="315" src="https://www.youtube.com/embed/lNdVCQsRZjw" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        </div>
     </div>
-
-    <div class="col-sm col align-self-center p-3 mb-2 bg-info text-white">
-        廠內照片
-      </div>
 </div>
-<hr size="20px">
-<div Align="center" style="margin-bottom: 50px;">
-<P Align=center></P><iframe src="https://twitter.com/suntory?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" width="1115" height="300" frameborder="0" style="border:0"></iframe></P>
-<!-- youtubevd -->
-<P><iframe width="560" height="315" src="https://www.youtube.com/embed/hS8I8StOgjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lNdVCQsRZjw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</P>
-</div>
-
 <%- include("parts/scripts.ejs") %>
 <%- include("parts/html-foot.ejs") %>

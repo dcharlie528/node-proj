@@ -5,33 +5,32 @@
         border-radius: 10px;
     }
 </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light " style="display:block;width: 100%;height:150px;background: url(../../../../imgs/wave2.svg) no-repeat;background-size: 100%;" >
     <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">日本三得利京都啤酒工廠</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item <%= pageName=='home' ? 'active' : ''%>">
-                    <a class="nav-link" href="/">Home </a>
+                    <a class="nav-link" href="/">回首頁</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        飯粒
-                    </a>
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">啤酒介紹</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/try-post-form">try-post-form</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="/try-post-form">微醺系列</a>
+                        <a class="dropdown-item" href="#">金麥系列</a>
+                        <a class="dropdown-item" href="#">神泡系列</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">無酒精系列</a>
                     </div>
                 </li>
                 <li class="nav-item <%= pageName=='address-book-list' ? 'active' : '' %>">
-                    <a class="nav-link" href="/address-book/list">address-book list</a>
+                    <a class="nav-link" href="/address-book/list">預約清單</a>
                 </li>
                 <li class="nav-item <%= pageName=='address-book-add' ? 'active' : '' %>">
                     <a class="nav-link" href="/address-book/add">address-book add</a>

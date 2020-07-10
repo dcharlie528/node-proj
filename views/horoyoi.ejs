@@ -1,0 +1,116 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+<style>
+    /* 滑動效果 */
+    .blog .carousel-indicators {
+        left: 0;
+        top: 100%;
+        bottom: -40px;
+
+    }
+
+
+    .blog .carousel-indicators li {
+        background: #a3a3a3;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+    }
+
+    .blog .carousel-indicators .active {
+        background: #707070;
+    }
+
+    img {
+        width: 500px;
+        height: 300px;
+    }
+</style>
+<!-- 最新商品 -->
+<div class="container-new-item">
+    <h3 style="text-align:center;">微醺系列</h3>
+    <div class="container" style="width: 2000px;">
+        <div class="row blog">
+            <div class="col-md-12">
+                <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#blogCarousel" data-slide-to="1"></li>
+                    </ol>
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active text-center">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <a href="http://www.suntory.com.tw/suntory/wine-product.aspx?sno=73" target="_blank">
+                                        <img src="../imgs/horoyoi/ginger.png" alt="Image" style="max-width:80%;"><br>
+                                        微醺-薑汁汽水<br><strong>現場售價$NT35</strong><br>
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="http://www.suntory.com.tw/suntory/wine-product.aspx?sno=73" target="_blank">
+                                        <img src="../imgs/horoyoi/icetea.png" alt="Image" style="max-width:80%;"><br>
+                                        微醺-紅茶沙瓦 <br><strong>現場售價$NT35</strong><br>
+
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="http://www.suntory.com.tw/suntory/wine-product.aspx?sno=73" target="_blank">
+                                        <img src="../imgs/horoyoi/momo.png" alt="Image" style="max-width:80%;"><br>
+                                        微醺-水蜜桃<br><strong>現場售價$NT35</strong><br>
+
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="http://www.suntory.com.tw/suntory/wine-product.aspx?sno=73" target="_blank">
+                                        <img src="../imgs/horoyoi/plumsoda.png" alt="Image" style="max-width:80%;"><br>
+                                        微醺-梅酒蘇打<br><strong>現場售價$NT35</strong><br>
+
+                                    </a></div>
+
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                        <div class="carousel-item text-center">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <a href="http://www.suntory.com.tw/suntory/wine-product.aspx?sno=73" target="_blank">
+                                        <img src="../imgs/horoyoi/cola.png" alt="Image" style="max-width:80%;"><br>
+                                        微醺-可樂沙瓦<br><strong>現場售價$NT35</strong><br>
+
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="http://www.suntory.com.tw/suntory/wine-product.aspx?sno=73" target="_blank">
+                                        <img src="../imgs/horoyoi/honeylemon.png" alt="Image" style="max-width:80%;"><br>
+                                        微醺-蜂蜜檸檬<br><strong>現場售價$NT35</strong><br>
+
+                                    </a></div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                    </div>
+                    <!--.carousel-inner-->
+                </div>
+                <!--.Carousel-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+<br>
+<br>
+<br>
+<marquee direction="right" height="100" scrollamount="6" behavior="alternate" Align="bottom">
+    <h3 style="text-shadow:3px 3px 3px lightseagreen;">點擊圖片可至台灣三得利官方網站查詢營養標示</h3></marquee>
+</div>
+<%- include('parts/scripts') %>
+<%- include('parts/html-foot') %>

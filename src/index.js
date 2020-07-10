@@ -56,10 +56,6 @@ app.get("/", function (req, res) {
     });
 });
 
-// app.get("/abc",function(req,res){
-//     res.send("<h1>Hello ABC</h1>");
-// });
-
 app.get("/json-sales", (req, res) => {
     const sales = require(__dirname + "/../data/sales.json");
     // console.log(data);
@@ -71,14 +67,13 @@ app.get("/try-qs", function (req, res) {
     res.json(req.query);
 });
 
-app.get('/try-post-form', (req, res) => {
-    res.render('try-post-form');
+app.get('/horoyoi', (req, res) => {
+    res.render('horoyoi');
 });
 
-app.post('/try-post-form', (req, res) => {
-    res.render('try-post-form', req.body);
-    // res.json(req.body);
-});
+// app.post('/try-post-form', (req, res) => {
+//     res.render('try-post-form', req.body);
+// });
 
 app.post('/try-upload', upload.single('avatar'), (req, res) => {
     res.json(req.file);
@@ -150,29 +145,29 @@ app.get('/try-session', (req, res, next) => {
     });
 });
 
-app.get('/try-moment', (req, res, next) => {
-    const fm = 'YYYY-MM-DD HH:mm:ss';
-    const mo1 = moment(req.session.cookie.expires);
-    const mo2 = moment(new Date());
+// app.get('/try-moment', (req, res, next) => {
+//     const fm = 'YYYY-MM-DD HH:mm:ss';
+//     const mo1 = moment(req.session.cookie.expires);
+//     const mo2 = moment(new Date());
 
-    res.json([
-        mo1.format(fm),
-        mo2.format(fm),
-        mo1.tz('asia/tokyo').format(fm),
-        mo2.tz('Europe/London').format(fm),
-    ]);
+//     res.json([
+//         mo1.format(fm),
+//         mo2.format(fm),
+//         mo1.tz('asia/tokyo').format(fm),
+//         mo2.tz('Europe/London').format(fm),
+//     ]);
 
-});
+// });
 
 app.use('/address-book', require(__dirname + '/routes/address-book'));
 
 
 app.use(express.static("public"));
 
-app.use(function (req, res, next) {
-    res.type('text/plain');
-    res.status(404);
-    res.send('404-cant found');
+// 自訂404
+
+app.use(function (req, res) {
+    res.render("404")
 });
 
 

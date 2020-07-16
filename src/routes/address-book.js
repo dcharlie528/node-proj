@@ -6,24 +6,24 @@ const email_pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-
 const db = require(__dirname + '/../db_connect2');
 
 
-router.use((req, res, next)=>{
-    console.log('ab: ', req.url);
-    const whiteList = ['login', 'list'];
-    if(req.session.adminUser){
-        next();
-    } else {
-        let u = req.url.split('?')[0];
-        u = u.split('/')[1];
-        console.log('u:', u);
-        console.log('u2:', whiteList.indexOf(u));
-        if(whiteList.indexOf(u) === -1){
-            // 如果沒有在白名單內
-            return res.redirect('/');
-        } else {
-            next();
-        }
-    }
-});
+// router.use((req, res, next)=>{
+//     console.log('ab: ', req.url);
+//     const whiteList = ['login', 'list',];
+//     if(req.session.adminUser){
+//         next();
+//     } else {
+//         let u = req.url.split('?')[0];
+//         u = u.split('/')[1];
+//         console.log('u:', u);
+//         console.log('u2:', whiteList.indexOf(u));
+//         if(whiteList.indexOf(u) === -1){
+//             // 如果沒有在白名單內
+//             return res.redirect('/');
+//         } else {
+//             next();
+//         }
+//     }
+// });
 
 router.get('/', (req, res) => {
     res.redirect('/address-book/list');
@@ -60,12 +60,12 @@ router.get('/logout', (req, res)=>{
     
 
 
-
+// 生日
 router.get('/edit/:uid', async (req, res) => {
     const sql = "SELECT * FROM `address_book` WHERE uid=?";
     const [result] = await db.query(sql, [req.params.uid]);
     if (result.length) {
-        result[0].birthday = moment(result[0].birthday).format('YYYY-MM-DD');
+        result[0].booktime = moment(result[0].booktime).format('YYYY-MM-DD');
         res.render('address-book/edit', { row: result[0] });
     } else {
         res.redirect('/address-book/list');
@@ -105,12 +105,12 @@ router.get('/del/:uid', async (req, res) => {
 
 });
 
-router.get('/add', (req, res) => {
-    res.locals.pageName = 'address-book-add';
-    res.render('address-book/add');
+router.get('/register', (req, res) => {
+    // res.locals.pageName = 'register';
+    res.render('../views/register');
 });
 
-router.post('/add', async (req, res) => {
+router.post('/register', async (req, res) => {
     const output = {
         success: false,
         body: req.body
@@ -123,6 +123,7 @@ router.post('/add', async (req, res) => {
 
     const sql = "INSERT INTO `address_book` SET ?";
     const [result] = await db.query(sql, [req.body]);
+    
     if (result.affectedRows === 1 && result.insertId) {
         output.success = true;
     }
@@ -132,7 +133,7 @@ router.post('/add', async (req, res) => {
 
 router.get('/list/:page?', async (req, res) => {
     res.locals.pageName = 'address-book-list';
-    const perPage = 5; // 每一頁要顯示幾筆
+    const perPage = 7; // 每一頁要顯示幾筆
     let page = parseInt(req.params.page) || 1;
     const output = {
         perPage,
@@ -144,6 +145,7 @@ router.get('/list/:page?', async (req, res) => {
 
     const t_sql = "SELECT COUNT(1) num FROM address_book"; // 取得總筆數
     const [t_r] = await db.query(t_sql);
+    
     output.totalRows = t_r[0].num; // 總筆數
     output.totalPages = Math.ceil(output.totalRows / perPage); // 總頁數
 
@@ -161,6 +163,7 @@ router.get('/list/:page?', async (req, res) => {
     if(page<1){
         return res.redirect('/address-book/list/1');
     }
+
     if(page>output.totalPages){
         return res.redirect('/address-book/list/' + output.totalPages);
     }
@@ -169,7 +172,7 @@ router.get('/list/:page?', async (req, res) => {
     console.log('sql:', sql);
     const [r] = await db.query(sql);
     r.forEach((el)=>{
-        el.birthday = moment(el.birthday).format('YYYY-MM-DD');
+        el.booktime = moment(el.booktime).format('YYYY-MM-DD');
     });
     output.rows = r;
     // res.json(r);
@@ -179,5 +182,11 @@ router.get('/list/:page?', async (req, res) => {
         res.render('address-book/list-no-admin', output);
     }
 });
+
+// booktime
+// for (i = 0; i < result.length; i++) {
+//     result[i].booktime = moment(result[i].booktime).format('YYYY-MM-DD')
+// };
+
 
 module.exports = router;

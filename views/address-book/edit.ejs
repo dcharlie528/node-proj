@@ -12,7 +12,7 @@
                     <form name="form1" method="post" onsubmit="return checkForm()" data-novalidate>
                         <input type="hidden" name="uid" value="<%= row.uid %>">
                         <div class="form-group">
-                            <label for="name">姓名 *</label>
+                            <label for="name">姓名</label>
                             <input type="text" class="form-control" id="name" name="name" required
                             value="<%= row.name %>">
                         </div>
@@ -28,14 +28,14 @@
                                    value="<%= row.mobile %>">
                         </div>
                         <div class="form-group">
-                            <label for="birthday">生日 *</label>
-                            <input type="date" class="form-control" id="birthday" name="birthday" required
-                                   value="<%= row.birthday %>">
+                            <label for="booktime">人數</label>
+                            <input type="date" class="form-control" id="people" name="people" required
+                                   value="<%= row.people %>">
                         </div>
                         <div class="form-group">
-                            <label for="address">地址</label>
+                            <label for="address">預約日期</label>
                             <textarea class="form-control" name="address" id="address" cols="30" rows="3"
-                            ><%= row.address %></textarea>
+                            ><%= row.booktime %></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">修改</button>
                     </form>

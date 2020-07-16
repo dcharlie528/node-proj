@@ -35,9 +35,9 @@
                     <th scope="col">訂單號</th>
                     <th scope="col">姓名</th>
                     <th scope="col">email</th>
-                    <th scope="col">生日</th>
+                    <th scope="col">人數</th>
                     <th scope="col">手機</th>
-                    <th scope="col">地址</th>
+                    <th scope="col">預約日期</th>
                     <th scope="col"><i class="fas fa-edit"></i></th>
                 </tr>
                 </thead>
@@ -52,9 +52,9 @@
                     <td><%= i.uid %></td>
                     <td><%= i.name %></td>
                     <td><%= i.email %></td>
-                    <td><%= i.birthday %></td>
+                    <td><%= i.people %></td>
                     <td><%= i.mobile %></td>
-                    <td><%= i.address %></td>
+                    <td><%= i.booktime %></td>
                     <td>
                         <a href="/address-book/edit/<%= i.uid %>">
                             <i class="fas fa-edit"></i>

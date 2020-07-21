@@ -2,6 +2,9 @@
 <%- include('parts/navbar') %>
 
 <div class="container">
+    <div>
+        <h6>※所有項目皆須填寫</h6>
+    </div>
     <div id="infobar" class="alert alert-success" role="alert" style="display: none">
     </div>
     <div class="row">
@@ -42,7 +45,12 @@
             </div>
         </div>
     </div>
+    <div>
+        <h6>※單次預約上限為40人</h6>
+        <h6>※廠方有權變更預約資格</h6>
+    </div>
 </div>
+
 
 <%- include('parts/scripts') %>
 <script>
@@ -50,7 +58,7 @@
     const email = $('#email');
     const infobar = $('#infobar');
     //預約無法選擇今天以前
-    var today = new Date();
+        var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth() + 1; // 一月是0
         var yyyy = today.getFullYear();
